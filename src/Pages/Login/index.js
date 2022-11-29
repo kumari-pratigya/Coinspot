@@ -3,7 +3,11 @@ import style from './Login.module.css'
 import Footer from '../../Components/Footer'
 import Navbar from '../../Components/Navbar'
 import {AiFillEye} from 'react-icons/ai'
+
 const index = () => {
+  function onChange(value) {
+    console.log("Captcha value:", value);
+  }
   return (
     <div>
     <Navbar/>
@@ -32,17 +36,14 @@ const index = () => {
 </div>
 <script  src="https://www.google.com/recaptcha/api.js"></script>
 <div className="g-recaptcha mt-20" data-sitekey="6LfSnCMUAAAAAKQuSdBZFzXYmTKQ7EOCu0tcIQB6">
-
 <div>
 <iframe 
 title="reCAPTCHA" 
 src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LfSnCMUAAAAAKQuSdBZFzXYmTKQ7EOCu0tcIQB6&amp;co=aHR0cHM6Ly93d3cuY29pbnNwb3QuY29tLmF1OjQ0Mw..&amp;hl=en&amp;v=Km9gKuG06He-isPsP6saG8cn&amp;size=normal&amp;cb=vemqe4isoadz" width="304" height="78" role="presentation" name="a-l2er8eri2azs" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox">
 </iframe>
 </div>
-{/* <textarea id="g-recaptcha-response" name="g-recaptcha-response" Name="g-recaptcha-response">
-</textarea> */}
-
 </div>
+
 <button type="submit" className={`w-100 btn btn-lg btn-primary ${style.btncreateaccount}`}>Login</button>
 <div className={`text-center ${style.CreateAccount}`}>
 <small style={{color:"#75798A"}}>

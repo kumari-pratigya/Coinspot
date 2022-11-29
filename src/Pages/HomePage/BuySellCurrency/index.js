@@ -8,8 +8,26 @@ import Solana from '../../../Assets/Images/solana.png';
 import polygon from '../../../Assets/Images/matic network.png';
 import cardano from '../../../Assets/Images/cardano.png';
 import style from './BuySellCurrency.module.css';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 import {BsArrowDownRight,BsArrowUpRight} from 'react-icons/bs'
-const index = () =>{
+const Index = () =>{
+  const initialValues = {
+    email:"",
+    
+  };
+  const validationSchema = Yup.object({
+    email: Yup.string().required("**Required!").email("Invalid Email Address")
+  });
+  const onSubmit = (values,e) => {
+    e.preventDefault();
+   console.log(values);
+  }
+  const formik =useFormik({
+    initialValues,
+    onSubmit,
+    validationSchema,
+  });
   return (
     <>
     <div className={`pt-5 ${style.section}`}>
@@ -22,14 +40,19 @@ const index = () =>{
                 </div>
                 <h2 className={`text-white  text-center text-md-start  ${style.heading1}`}>Buy, Sell &amp; Swap Cryptocurrency</h2>
                 <p className={`text-white  text-center text-md-start ${style.subHeading}`}>The easiest way to buy Bitcoin (BTC) and a whole world of other digital currencies.</p>
-                <form>
+                <form  onSubmit={formik.handleSubmit}>
 <input type="hidden"/>
 <div className={`input-group  mx-auto mx-md-0 ${style.inputContainer}`}>
-<input className={`form-control ${style.emailInput}`} type="email" name="email" placeholder="Email address"/>
+<input className={`form-control ${style.emailInput}`} {...formik.getFieldProps("email")} type="text"  placeholder="Email address"/>
 <span className={style.inputGroupButton}>
-<button className={`btn btn-primary ${style.getStartedButton}`} type="submit">Get started</button>
+<button className={`btn btn-primary ${style.getStartedButton}`} type='submit'>Get started</button>
 </span>
 </div>
+{formik.touched.email && formik.errors.email ? (
+                          <p style={{color:"red"}} className="error mt-3">
+                            {formik.errors.email}
+                          </p>
+                        ) : null}
 </form>
         <div className={`d-flex px-2  py-1   ${style.rating}`}>
           <img className={`my-2 ${style.trustPilot}`} src={TrustPilot} alt ="trustPilot"/>
@@ -139,4 +162,4 @@ const index = () =>{
   )
 }
 
-export default index
+export default Index

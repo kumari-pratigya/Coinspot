@@ -1,7 +1,19 @@
 import React from 'react'
 import style from './Footer.module.css'
 import {BsMoonFill} from 'react-icons/bs'
+import {BiArrowToTop} from 'react-icons/bi'
 const index = () => {
+    const ScrollTop=()=>{
+        document.documentElement.scrollTop = 0; 
+    }
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display="block";
+  } else {
+    document.getElementById("myBtn").style.display="none";
+  }
+}
   return (
     <div className={style.section}>
       <div className='container'>
@@ -139,7 +151,9 @@ const index = () => {
 </div>
 </div>
 </div>
+<BiArrowToTop id="myBtn" onClick={ScrollTop} className={style.bottomIcon}/>
       </div>
+      
       </div>
   )
 }

@@ -23,7 +23,7 @@ const NavBar = () => {
     <>
       <nav className={`navbar navbar-expand-lg bg-light ${style.navbar}`}>
   <div className={`container  gx-0 ${style.innerContainer}`}>
-    <a className={`navbar-brand ${style.logoHeader}`} href="!#">
+    <a className={`navbar-brand ${style.logoHeader}`} href="/">
     <img alt="logo" className='me-2' src={Logo} height="30px" width="30px"/>
     CoinSpot
    </a>
@@ -36,7 +36,7 @@ const NavBar = () => {
     
       <div className="modal-body">
       <li className='nav-item ps-2 text-start'>
-        <a className={`navbar-brand ${style.logoHeader}`} href="!#">
+        <a className={`navbar-brand ${style.logoHeader}`} href="/">
         <img alt="logo" className='me-2' src={Logo} height="30px" width="30px"/>
         CoinSpot
         </a>
@@ -61,7 +61,7 @@ const NavBar = () => {
         </li>
       
         <li className="nav-item">
-          <NavLink to="/Nft" className={`nav-link   ${style.link}`}><span className='mx-3' style={{color:"#fff",fontSize:"34px"}}><TfiShoppingCart/></span>NFT</NavLink>
+          <NavLink to="/nft" className={`nav-link   ${style.link}`}><span className='mx-3' style={{color:"#fff",fontSize:"34px"}}><TfiShoppingCart/></span>NFT</NavLink>
         </li>
        
         <li className="nav-item">
@@ -74,10 +74,10 @@ const NavBar = () => {
         <hr/>
         <form className="d-flex flex-column" role="search">
         <li className="nav-item">
-          <NavLink  to="/Register" className={`nav-link  ${style.link}`}><span className='mx-3' style={{color:"#fff",fontSize:"34px"}}><IoRocketOutline/></span>Register</NavLink>
+          <NavLink  to="/register" className={`nav-link  ${style.link}`}><span className='mx-3' style={{color:"#fff",fontSize:"34px"}}><IoRocketOutline/></span>Register</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink  to="/Login" className={`nav-link  ${style.link}`}><span className='mx-3' style={{color:"#fff",fontSize:"34px"}}><AiOutlineLogout/></span>Login</NavLink>
+          <NavLink  to="/login" className={`nav-link  ${style.link}`}><span className='mx-3' style={{color:"#fff",fontSize:"34px"}}><AiOutlineLogout/></span>Login</NavLink>
         </li>
         </form>
       </div>
@@ -105,7 +105,7 @@ const NavBar = () => {
           <a href="!#" className={`nav-link  ${style.link}`}>BUNDLES</a>
         </li>
         <li className="nav-item">
-          <NavLink to="/Nft" className={`nav-link ${style.link}`}>NFT</NavLink>
+          <NavLink to="/nft" className={`nav-link ${style.link}`}>NFT</NavLink>
         </li>
         <li className="nav-item">
           <a href="!#" className={`nav-link   ${style.link}`}>OTC</a>
@@ -114,12 +114,10 @@ const NavBar = () => {
           <a  href="!#" className={`nav-link  ${style.link}`}>MARKETS</a>
         </li>
         <form className="d-flex" role="search">
-     <NavLink className={`mx-2 ${style.register}` } to="/Register">REGISTER</NavLink>
-     <NavLink className={`ms-2  ${style.login}`} to="/Login">   LOGIN</NavLink>
+     <NavLink className={`mx-2 ${style.register}` } to="/register">REGISTER</NavLink>
+     <NavLink className={`ms-2  ${style.login}`} to="/login">LOGIN</NavLink>
       </form>
       </ul>
-    
-     
     </div>
     </div>
 </nav>

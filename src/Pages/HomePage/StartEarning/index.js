@@ -1,6 +1,23 @@
 import React from 'react'
 import style from './StartEarning.module.css';
-const index = () => {
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+const Index = () => {
+  const initialValues = {
+    email:"",  
+  };
+  const validationSchema = Yup.object({
+    email: Yup.string().required("**Required!").email("Invalid Email Address")
+  });
+  const onSubmit = (values,e) => {
+    e.preventDefault();
+   console.log(values);
+  }
+  const formik =useFormik({
+    initialValues,
+    onSubmit,
+    validationSchema,
+  });
   return (
     <div className={style.section}>
       <div className='container'>
@@ -9,14 +26,19 @@ const index = () => {
         <h2 className={`text-center text-lg-start {style.sectionHeading}`}>
         <span className={style.gradientText}>Join 2.5 million</span> other users<br/> and start earning!</h2>
         <div className="d-none d-lg-block">
-<form>
-<input  type="hidden" name="_csrf" value="WxGqUKb1-2N_22es5_3Ey1M2GyQAF1vvYMok"/>
+<form  onSubmit={formik.handleSubmit}>
+<input  type="hidden" />
 <div className={`input-group getstarted ${style.getStartedForm}`}>
-<input className={`form-control ${style.email}`} type="email" name="email" placeholder="Email address"/>
+<input className={`form-control ${style.email}`} type="text" {...formik.getFieldProps("email")} placeholder="Email address"/>
 <span className={`input-group-btn ${style.inputButton}`}>
 <button className={`btn btn-primary ${style.getStartedButton}`} type="submit">Get Started</button>
 </span>
 </div>
+{formik.touched.email && formik.errors.email ? (
+                          <p style={{color:"red"}} className="error mt-3">
+                            {formik.errors.email}
+                          </p>
+                        ) : null}
 </form>
 </div>
 <div className="d-lg-none">
@@ -35,4 +57,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index

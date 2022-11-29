@@ -21,11 +21,13 @@
   border-bottom: 2px solid white;
 }
 .accordion{
-  position: relative;
   z-index: -1;
 }
 .modal{
       --bs-modal-margin: 0 !important;
+}
+.modal-open{
+  padding-right: 0px !important;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
