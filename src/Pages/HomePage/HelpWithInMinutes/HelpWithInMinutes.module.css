@@ -1,0 +1,55 @@
+.section{
+    padding-top:40px;
+    padding-bottom: 80px;
+}
+.leftContent{
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    text-align: left;
+}
+.sectionHeading{
+    margin-bottom: 20px;
+    font-family: "MontSmBd" !important;
+    color: #17181C !important;
+   max-width: 500px;
+}
+.replytime{
+    font-family: "Mont";
+    font-size: 14px;
+   
+}
+.text{
+    margin-left: 18px;
+}
+.gradientText{
+    background: linear-gradient(90deg, #6EF3E8 0%, #004FEE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 5px 0;
+    -webkit-box-decoration-break: clone;
+}
+.textDefault{
+    font-family: "Mont";
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 10px;
+    color: #75798A;
+}
+.chat{
+    margin-top: 30px;
+    width: -webkit-fill-available;
+}
+
+@media (min-width: 768px){
+.chat {
+    width: 400px;
+}
+
+}
+@media (min-width: 992px){
+.chat {
+    margin-left: 50px;
+}
+
+}

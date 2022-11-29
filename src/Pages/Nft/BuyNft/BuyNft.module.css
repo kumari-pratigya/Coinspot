@@ -1,0 +1,28 @@
+.section{
+    background-color: #004FEE;
+    padding: 50px 0px;
+}
+.leftContent{
+    max-width: 520px;
+    color: white;
+}
+.heading4{
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+.heading1{
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+.subHeading{
+    font-size: 16px;
+}
+.imgHero{
+    max-width: 100%;
+    height: auto;
+}
+.imgHero1{
+    max-width: 100%;
+    height: auto;
+    margin-top: 50px;
+}

@@ -1,0 +1,44 @@
+.section{
+    background-color: #F5F8FF !important;
+    padding: 80px 0px;
+}
+.textCenter{
+    margin-bottom: 15px;
+    text-align: center !important;
+}
+.sectionHeading{
+    margin-bottom: 15px;
+    text-align: center;
+}
+.gradientText{
+    background: linear-gradient(90deg, #6EF3E8 0%, #004FEE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 5px 0;
+    -webkit-box-decoration-break: clone;
+}
+.textDefault{
+    max-width: 750px;
+    font-family: "Mont";
+    font-size: 20px;
+    line-height: 24px;
+    color: #75798A;
+}
+.blockHeading{
+    margin-bottom: 10px;
+    margin-top:20px;
+    font-family: "MontSmBd";
+    font-size: 16px;
+    color: #17181C;
+}
+.blockText{
+    font-family: "Mont";
+    font-size: 18px;
+    color: #75798A;
+    max-width: 260px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row{
+    margin-top: 50px;
+}

@@ -1,0 +1,163 @@
+.section{
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+.card{
+    background-color: #fff;
+    border-radius: 12px !important;
+    padding: 20px;
+    max-width: 440px;
+    box-shadow: 15px 42px 56px rgb(0 0 0 / 7%) !important;
+}
+.moreCoins{
+    color: #004EA0;
+    text-decoration: none;
+}
+.rightContent{
+    padding-left: 80px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+}
+.sectionHeading{
+    margin-bottom: 20px;
+    font-family: "MontSmBd" !important;
+    color: #17181C !important;
+    letter-spacing: -0.03rem;
+    width: 260px;
+}
+.gradientText{
+    background: linear-gradient(90deg, #6EF3E8 0%, #004FEE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 5px 0;
+    -webkit-box-decoration-break: clone;
+}
+.textDefault{
+font-family: "Mont";
+font-size: 16px;
+line-height: 24px;
+color: #75798A;
+width: 390px;
+}
+.cardano{
+    border: 1px solid transparent;
+}
+.bitCoinRating{
+    font-family: "InterSmBd";
+    padding: 4px 8px;
+    border-radius: 10px !important;
+    color: #16B68D;
+    font-size: 16px;
+}
+.tableRow{
+    text-align:center;
+    vertical-align: middle;
+}
+.SolanaCurrency{
+    font-family: "InterSmBd";
+    padding: 4px 8px;
+    border-radius: 10px !important;
+    color: #FD7474;
+}
+@media (min-width: 150px) { 
+    .rightContent{
+        padding-left: 0px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        place-content: center;
+    }
+    .sectionHeading{
+        margin-bottom: 20px;
+        font-family: "MontSmBd" !important;
+        color: #17181C !important;
+        letter-spacing: -0.03rem;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .textDefault{
+        width: 100%;
+       
+    }
+    .card{
+        max-width: 100%;
+    }
+}
+@media (min-width: 576px) { 
+    .rightContent{
+        padding-left:80px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        place-content: center;
+    }
+    .textDefault{
+        width: 100%;
+    }
+    .card{
+        max-width: 100%;
+    }
+    .sectionHeading{
+        margin-bottom: 20px;
+        font-family: "MontSmBd" !important;
+        color: #17181C !important;
+        letter-spacing: -0.03rem;
+        width: 100%;
+        margin-left: 0px;
+        margin-right:0px;
+       
+    }
+    
+}
+@media (min-width: 768px) { 
+    .rightContent{
+        padding-left:80px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        place-content: center;
+    }
+    .rightContent{
+        text-align: center;
+   }
+    .card{
+        max-width: 440px;
+    }
+ }
+@media (min-width: 992px) { 
+    /* .textDefault{
+       max-width: 100%;
+    text-align: center !important;
+    }
+    .sectionHeading{
+        max-width: 100%;
+        text-align: center !important;
+    } */
+    .card{
+        max-width: 440px;
+    }
+    .rightContent{
+        text-align: left;
+        padding-left: 80px;
+   }
+   
+    }
+  
+@media (min-width: 1200px) {
+
+    .textDefault{
+        max-width: 390px;
+     }
+     .sectionHeading{
+         width: 260px;
+     }
+     .card{
+         max-width: 440px;
+     }
+}
+@media (min-width: 1400px) { 
+   
+}

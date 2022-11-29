@@ -1,0 +1,34 @@
+.Container{
+    padding: 80px 0px;
+}
+.gradienttText1{
+    background: linear-gradient(90deg, #6EF3E8 0%, #004FEE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 5px 0;
+    -webkit-box-decoration-break: clone;
+}
+.textDefault{
+    max-width: 768px;
+    font-family: "Mont";
+    line-height: 24px;
+    color: #75798A;
+}
+.blockHeading{
+    margin-bottom: 10px;
+     margin-top: 20px;
+     font-family: "MontSmBd";
+    font-size: 16px;
+    color: #17181C;
+}
+.blockText {
+    font-family: "Mont";
+    font-size: 14px;
+    color: #75798A;
+    max-width: 260px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.section{
+    background-color: #F5F8FF !important;
+}

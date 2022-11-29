@@ -1,0 +1,50 @@
+.section{
+    background-color: #004FEE !important;
+    padding-top: 50px;
+}
+.leftContent{
+    display: flex;
+    place-content: center;
+    flex-direction: column;
+    text-align: left;
+}
+.googleplayImage{
+    width:178.59px;
+    height: 57.08px;
+}
+.appStoreImage{
+    width:178.59px;
+    height: 57.08px;
+}
+.imageContainer{
+    display: flex;
+    flex-direction:column;
+}
+.textDefault{
+    margin-bottom: 30px;
+    color: white;
+    max-width: 380px;
+    height: 48px;
+}
+.homeappImage{
+    max-height: 400px;
+    max-width: 95%;
+}
+@media (min-width: 360px) { 
+    .imageContainer{
+        display: flex;
+        flex-direction: row !important;
+    }
+ }
+ @media (min-width: 768px) { 
+
+  }
+@media (min-width: 992px) { 
+
+   }
+@media (min-width: 1200px) { 
+
+}
+@media (min-width: 1400px) { 
+    
+ }

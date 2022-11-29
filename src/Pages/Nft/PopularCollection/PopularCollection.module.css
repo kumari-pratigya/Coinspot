@@ -1,0 +1,51 @@
+.section{
+    padding: 50px 0px;
+    background-color: #F5F8FF !important;
+}
+.heading{
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+.cardCollectionImg{
+    background-image: url(https://i.seadn.io/gae/XAh3ZBdFDIOiXmaDbUjypz-VvXwNIB-lmXrcO7acxQyFXXNWSmDIslQsx7OPQOCnTtEchox65W1skJv16zkC2ugBNbDptTsfkQJxrnY?w);
+    height: 360px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.cardCollection{
+    margin-bottom: 20px;
+    min-width: 300px;
+    max-width: 400px;
+    background: #fff;
+    box-shadow: 0px 3.5px 9.5px rgb(0 0 0 / 15%);
+    border-radius: 8px !important;
+}
+.cardCollectionBody{
+    padding: 15px;
+    text-align: center;
+}
+.title{
+    font-family: "InterSmBd";
+    font-size: 22px;
+    color: #17181C;
+}
+.description{
+    margin-top: 20px;
+    font-size: 14px;
+    color: #75798A;
+}
+.cardCollectionImg1{
+    background-image:url(https://i.seadn.io/gae/6X867ZmCsuYcjHpx-nmNkXeHaDFd2m-EDEEkExVLKETphkfcrpRJOyzFxRQlc-29J0e-9mB9uDGze0O9yracSA9ibnQm2sIq5i2Yuw?w);
+    height: 360px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 7px;
+}
+.cardCollectionImg2{
+    background-image:url(https://i.seadn.io/gae/ufumJQN9NwT0U5jh_suJP5cLRIjyE38hirVdBChQLe-ghnt1RomIARfxSNmR6fdMQC0OIgjVQHhhduUfcxiRVrfHpihrXSW-SU5J?w);
+    height: 360px;
+    width: 100%;
+    background-repeat: no-repeat;
+}

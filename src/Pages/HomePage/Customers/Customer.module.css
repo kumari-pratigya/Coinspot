@@ -1,0 +1,73 @@
+.section{
+    padding: 50px 0px;
+}
+.rightContent{
+    margin-bottom: 20px;
+}
+.leftContent{
+    margin-bottom:20px;
+    text-align: left;
+}
+.sectionHeading{
+    font-family: "MontSmBd" !important;
+    color: #17181C !important;
+    letter-spacing: -0.03rem;
+}
+.textDefault{
+    font-family: "Mont";
+    font-size: 14px;
+    line-height: 24px;
+    max-width: 326px;
+    color: #75798A;
+}
+.gradientText{
+    background: linear-gradient(90deg, #6EF3E8 0%, #004FEE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    padding: 5px 0;
+    -webkit-box-decoration-break: clone;
+}
+.trustpilot{
+padding: 15px;
+border-radius: 4px !important;
+border: 1px solid #E3E4E8;
+max-width: 265px;
+/* float: right; */
+}
+.textRight{
+    text-align: right;
+}
+.row{
+    margin-top: 50px;
+}
+.img1{
+    width:-webkit-fill-available;;
+}
+.img2{
+    width: -webkit-fill-available;;
+}
+.img3{
+    width: -webkit-fill-available;;
+}
+@media (min-width: 120px) { 
+  
+}
+
+
+@media (min-width: 768px) {
+
+ }
+
+@media (min-width: 992px) { 
+   
+ }
+
+@media (min-width: 1200px) { 
+
+}
+
+
+@media (min-width: 1400px) { 
+
+ }

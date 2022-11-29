@@ -1,0 +1,183 @@
+.leftContent{
+    padding:0px 20px;
+}
+.content{
+    max-width: 410px;
+    padding: 80px 0px;
+    text-align: left;
+}
+.sectionHeading{
+    margin-top: 30px;
+    font-family: "InterSmBd" !important;
+    color: #17181C !important;
+    font-size: 30px;
+}
+.subHeading{
+    margin-bottom: 20px;
+    color: #75798A;
+   
+}
+input::placeholder{
+   color: #c1ccd4;
+}
+.formGroup{
+    margin-bottom: 15px;
+}
+.inputGroup{
+    position: relative;
+}
+.togglepassword{
+position: absolute;
+top: 0%;
+right: 4%;
+color: grey;
+font-size: 20px;
+}
+.CreateAccount{
+    margin-top: 10px;
+}
+.txtg5{
+font-family: "InterSmBd" !important;
+color: #75798A;
+}
+.btncreateaccount{
+    margin-top: 30px;
+    font-size: 14px;
+    border-radius: 3px;
+    background-color: #428bca;
+}
+.bgWrap{
+    position: relative;
+}
+.rightContent{
+    background-color: #004FEE;
+    place-content: center;
+    flex-direction: column;
+}
+.title{
+    margin-top: 10px;
+}
+.blockHero{
+    font-size: 18px;
+    padding: 20px 10px;
+    height: 150px;
+    width: 185px;
+    color: #fff;
+    background: #226BFF;
+    border-radius: 8px !important;
+    text-align: center;
+}
+.reviewimg{
+    margin-top: 20px;
+    max-width: 300px;
+    margin-bottom: 50px;
+}
+.imgPlanet1{
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    height: 100px;
+    max-height: 10%;
+    width: auto;
+}
+.imgPlanet2{
+    position: absolute;
+    top: 70px;
+    left: 0px;
+    height: 175px;
+    max-height: 18%;
+    width: auto;
+}
+.imgPlanet3{
+position: absolute;
+bottom: -97px;
+right: 0px;
+height: 295px;
+max-height: 35%;
+width: auto;
+}
+.imgComet1{
+position: absolute;
+top: 40%;
+bottom: 0;
+right: 40px;
+}
+.trustpilot{
+    padding: 15px;
+    border-radius: 4px !important;
+    border: 1px solid #E3E4E8;
+    width: 48%;
+    max-width: 265px;
+    background: #fff;
+}
+.tp2Img{
+height: 30px;
+}
+.tprating{
+    color: #182435;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2rem;
+}
+.tpreview{
+    color: #3E434C;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    line-height: 1.2rem;
+}
+
+@media (min-width: 768px){
+   .content{
+    padding: 50px 0px;
+   }
+    
+    }
+@media (min-width: 992px) { 
+    .blockHero{
+        width: 128px;
+        height: 120px;
+    } 
+    .title{
+        font-size: 12px;
+    }
+    .blockHeroImage{
+        height: 35px;
+    }
+   
+}
+@media (min-width: 1200px) { 
+    .blockHero{
+        font-size: 18px;
+        padding: 20px 10px;
+        height: 150px;
+        width: 185x;
+        color: #fff;
+        background: #226BFF;
+        border-radius: 8px !important;
+        text-align: center;
+    }
+    .title{
+        font-size: 14px;
+    }
+    .blockHeroImage{
+        height: 48px;
+    }
+}
+@media (min-width: 1400px) { 
+    .blockHero{
+        font-size: 18px;
+        padding: 20px 10px;
+        height: 150px;
+        width: 185px;
+        color: #fff;
+        background: #226BFF;
+        border-radius: 8px !important;
+        text-align: center;
+    }
+ }
+ @media (max-width: 991.98px) { 
+    .inputGroup{
+        z-index: -1;
+    }
+}
