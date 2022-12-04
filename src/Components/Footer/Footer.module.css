@@ -2,6 +2,11 @@
     padding: 50px 0px;
     font-family: "Inter";
 }
+.darkSection{
+    background-color: black;
+    padding: 50px 0px;
+    font-family: "Inter";
+}
 .whiteSpace{
     margin-top: 20px;
 }
@@ -15,6 +20,10 @@
 .text{
     margin-left: 10px;
    
+}
+.darkText{
+    margin-left: 10px;
+    color: white;
 }
 .img2{
     max-width: 160px;
@@ -34,10 +43,24 @@
     text-align: left;
     margin-left: 5px;
 }
+.darksclText{
+    font-family: "Mont";
+    font-size: 14px;
+    color:white;
+    line-height: 1.6rem;
+    margin-top: 5px;
+    text-align: left;
+    margin-left: 5px;
+}
 .footerText{
     font-family: "Mont";
     font-size: 12px;
     color: #00050E;
+}
+.darkFooterText{
+    font-family: "Mont";
+    font-size: 12px;
+    color:white;
 }
 .footerGroup{
     list-style-type: none;
@@ -46,12 +69,21 @@
 }
 .footerTitle{
     font-family: "MontSmBd";
-    color: #004FEE;
+    color:#004FEE;
     margin-bottom: 15px;
     margin-top: 20px;
 }
 .footerList{
     margin-top: 10px;
+}
+.footerListDark{
+    margin-top: 10px;
+}
+.footerListDark a{
+    font-family: "Mont" !important;
+    font-size: 14px !important;
+    color:white !important;
+    text-decoration: none;
 }
 .footerList a{
     font-family: "Mont" !important;
@@ -59,6 +91,7 @@
     color: #00050E !important;
     text-decoration: none;
 }
+
 .footergroupEarn{
     margin-bottom: 30px;
     list-style-type: none;
@@ -74,6 +107,9 @@
     border-color: #004FEE;
     background-color: #FFF !important;
     min-width: auto;
+}
+.isoTextDark{
+    color: white;
 }
 .setnightmodebtn:hover{
     border-radius: 5px !important;
@@ -94,6 +130,13 @@
 .footerlogo{
     font-family: Mont;
     color: #00050E !important;
+    font-size: 22px;
+    text-decoration: none;
+    line-height: 2em;
+}
+.darkfooterLogo{
+    font-family: Mont;
+    color:white !important;
     font-size: 22px;
     text-decoration: none;
     line-height: 2em;

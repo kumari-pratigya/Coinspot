@@ -1,5 +1,4 @@
 import React from 'react'
-import NavBar from '../../Components/Navbar'
 import BuySellCurrency from '../HomePage/BuySellCurrency'
 import StartTrading from '../HomePage/StartTrading'
 import SupportCurrency from '../HomePage/SupportCryptoCurrency'
@@ -9,11 +8,9 @@ import TrustedAustralian from '../HomePage/TrustedAustralianPlatform'
 import Customers from '../HomePage/Customers'
 import FrequentlyAskedQuestion from '../HomePage/FrequentlyAskedQuestion'
 import StartEarning from '../HomePage/StartEarning'
-import Footer from '../../Components/Footer'
 const index = () => {
   return (
-    <div>
-      <NavBar/>
+    <>
       <BuySellCurrency/>
       <StartTrading/>
       <SupportCurrency/>
@@ -23,8 +20,7 @@ const index = () => {
       <Customers/>
       <FrequentlyAskedQuestion/>
       <StartEarning/>
-      <Footer/>
-    </div>
+    </>
   )
 }
 

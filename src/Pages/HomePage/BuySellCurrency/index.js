@@ -8,20 +8,26 @@ import Solana from '../../../Assets/Images/solana.png';
 import polygon from '../../../Assets/Images/matic network.png';
 import cardano from '../../../Assets/Images/cardano.png';
 import style from './BuySellCurrency.module.css';
+import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import {BsArrowDownRight,BsArrowUpRight} from 'react-icons/bs'
 const Index = () =>{
+  const navigate=useNavigate();
   const initialValues = {
-    email:"",
-    
+    email:"",   
   };
   const validationSchema = Yup.object({
     email: Yup.string().required("**Required!").email("Invalid Email Address")
   });
-  const onSubmit = (values,e) => {
-    e.preventDefault();
+  const onSubmit = (values) => {
    console.log(values);
+   navigate("/Register", {
+    state: {
+     value:formik.values.email
+    },
+  })
   }
   const formik =useFormik({
     initialValues,
@@ -43,9 +49,9 @@ const Index = () =>{
                 <form  onSubmit={formik.handleSubmit}>
 <input type="hidden"/>
 <div className={`input-group  mx-auto mx-md-0 ${style.inputContainer}`}>
-<input className={`form-control ${style.emailInput}`} {...formik.getFieldProps("email")} type="text"  placeholder="Email address"/>
+<input className={`form-control ${style.emailInput}`} value={formik.values.email} {...formik.getFieldProps("email")} type="text"  placeholder="Email address"/>
 <span className={style.inputGroupButton}>
-<button className={`btn btn-primary ${style.getStartedButton}`} type='submit'>Get started</button>
+ <button className={`btn btn-primary ${style.getStartedButton}`} type='submit'>Get started</button>
 </span>
 </div>
 {formik.touched.email && formik.errors.email ? (

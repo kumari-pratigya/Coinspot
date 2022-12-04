@@ -7,7 +7,7 @@ const index = () => {
       <h2 className={`${style.heading} text-start`}>Popular Collections</h2>
         <div className='row'>
             <div className='col-lg-4'>
-            <div className={style.cardCollection}>
+            <div className={`mx-auto ${style.cardCollection}`}>
             <a href="/nft/dennisrodmansbarbershop">
             <div className={style.cardCollectionImg} ></div>
             </a>
@@ -21,7 +21,7 @@ Dennis Rodman's Barbershop is the first official NFT collection from NBA Hall-of
             </div>
             </div>
             <div className='col-lg-4'>
-            <div className={style.cardCollection}>
+            <div className={`mx-auto ${style.cardCollection}`}>
             <a href="/nft/dennisrodmansbarbershop">
             <div className={style.cardCollectionImg1} ></div>
             </a>
@@ -35,7 +35,7 @@ Inspired by the work of renowned artist Jean-Michel Basquiat, Hashmasks is a col
             </div>
             </div>
             <div className='col-lg-4'>
-            <div className={style.cardCollection}>
+            <div className={`mx-auto ${style.cardCollection}`}>
             <a href="/nft/dennisrodmansbarbershop">
             <div className={style.cardCollectionImg2} ></div>
             </a>

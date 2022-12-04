@@ -1,54 +1,124 @@
-import React from 'react'
+import {React,useState,useRef,useContext} from 'react'
 import style from './Register.module.css'
-import Navbar from '../../Components/Navbar'
-import Footer from '../../Components/Footer'
-import {AiFillEye} from 'react-icons/ai'
-const index = () => {
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import {AiFillEye,AiFillEyeInvisible} from 'react-icons/ai'
+import { initializeApp } from 'firebase/app';
+import {firebaseConfig} from '../FirebaseConfig';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { useLocation } from "react-router-dom";
+import {toast} from 'react-toastify' 
+import { getAuth ,createUserWithEmailAndPassword } from "firebase/auth";
+import { DarkModeContext } from '../../Context/DarkMode';
+const Index = () => {
+  const [theme,setTheme]=useState(false)
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth();
+  const captchaRef = useRef(null)
+  const {darkMode}=useContext(DarkModeContext)
+  const location=useLocation();
+  const [showPassword,setShowPassword]=useState(false);
+  const handleClickShowPassowrd=()=>{
+    setShowPassword(!showPassword);
+  }
+  // function onChange(value) {
+  //   console.log("Captcha value:",value);
+  //   console.log(captchaRef.current.getValue(),"token");
+  // }
+  const initialValues = {
+    email:"",   
+    password:"",
+    recaptcha:""
+   
+  };
+  const validationSchema = Yup.object({
+    email: Yup.string().required("**Required!").email("Invalid Email Address"),
+    password:Yup.string().required("**Required!").min(8, 'Password is too short - should be 8 chars minimum.')
+    .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
+    recaptcha:Yup.string().required("Please Select Recaptcha")
+  });
+  const onSubmit = (values,{resetForm}) => {
+   console.log(values);
+   const email=values.email;
+   const password=values.password;
+   captchaRef.current.getValue();
+   captchaRef.current.reset();
+   createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    console.log("userCredential",userCredential)
+    const user = userCredential.user;
+    toast.success("Your Account has been Created");
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(error);
+  });
+  resetForm({values:""})
+  }
+  const formik =useFormik({
+    initialValues,
+    onSubmit,
+    validationSchema,
+  });
   return (
-    <div>
-    <Navbar/>
-    
+    <>
+   
      <div className='row gx-0'>
-        <div className= {`col-lg-6 ${style.leftContent} `}>
+        <div className= {`col-lg-6 ${ darkMode ?style.leftContent:style.LeftContentDark} `}>
         <div className={`mx-auto py-50 py-lg-80 ${style.content}`}>
-<h1 className={`${style.sectionHeading} txt-smbd mt-30`}>Create a CoinSpot account</h1>
-<p className={style.subHeading}>Join two million other Australians trading Bitcoin and a whole world of other digital currencies on CoinSpot.</p>
-<form className="form-validate"  action="/register" method="POST" novalidate="novalidate">
-<input type="hidden" name="_csrf" value="DDh2jCJr-p9JhNd2DzQgPWF47lCEJjtUEqMI"/>
+<h1 className={`${darkMode?style.sectionHeading:style.sectionHeadingDark} txt-smbd mt-30`}>Create a CoinSpot account</h1>
+<p className={darkMode?style.subHeading:style.subHeadingDark}>Join two million other Australians trading Bitcoin and a whole world of other digital currencies on CoinSpot.</p>
+<form onSubmit={formik.handleSubmit}>
+<input type="hidden"/>
 <div className={style.formGroup}>
-<label>Email</label>
-<input type="email" className="form-control email" name="email" value="" placeholder="Type your email" required=""/>
+<label>Email  </label>
+<input type="email"  className={darkMode? "form-control mb-3 text-dark bg-light":"form-control mb-3 border-0 text-light bg-dark"} {...formik.getFieldProps("email")} placeholder="Type your email"/>
 </div>
+{formik.touched.email && formik.errors.email ? (
+                          <p style={{color:"red"}} className="error m-0">
+                            {formik.errors.email}
+                          </p>
+                        ) : null}
 <div className={style.formGroup}>
 <label>Password</label>
 <div className={style.inputGroup}>
-<input type="password" className="form-control" id="password" name="password" autocomplete="off" minlength="10" placeholder="Type your password" required="" />
+<input type={showPassword ? "text" : "password"} className={darkMode? "form-control mb-3 text-dark bg-light":"form-control mb-3 text-light bg-dark border-0"}  {...formik.getFieldProps("password")}  placeholder="Type your password"/>
 <div className={style.inputGroupAddon}>
-<span className={style.togglepassword}><AiFillEye/></span>
+{showPassword?<span onClick={handleClickShowPassowrd} className={style.togglepassword}><AiFillEyeInvisible/></span>
+:<span onClick={handleClickShowPassowrd} className={style.togglepassword}><AiFillEye/></span>
+}
 </div>
 </div>
 </div>
-<span><label for="password" className="error" ></label></span>
-<div className="passwordvalidate"></div>
-<input type="hidden" name="referredcode-elem" value=""/>
+{formik.touched.password && formik.errors.password ? (
+                          <p style={{color:"red"}} className="error m-0">
+                            {formik.errors.password}
+                          </p>
+                        ) : null}
+
 <div className={style.formGroup}>
 <label>Referral or Affiliate code (Optional)</label>
-<input className="form-control" type="text" maxlength="9" pattern="[A-Za-z0-9]+" name="referredcode" placeholder="If you have a referral / affiliate code please type here" value=""/>
+<input className={darkMode? "form-control mb-3 text-dark bg-light":"form-control mb-3 text-light bg-dark border-0"} type="text"  pattern="[A-Za-z0-9]+" name="referredcode" placeholder="If you have a referral / affiliate code please type here"/>
 <p className="help-block"></p>
 </div>
-<script  src="https://www.google.com/recaptcha/api.js"></script>
-<div className="g-recaptcha mt-20" data-sitekey="6LfSnCMUAAAAAKQuSdBZFzXYmTKQ7EOCu0tcIQB6">
+{/* <script nonce="" src="https://www.google.com/recaptcha/api.js"></script> */}
 
-<div>
-<iframe 
-title="reCAPTCHA" 
-src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LfSnCMUAAAAAKQuSdBZFzXYmTKQ7EOCu0tcIQB6&amp;co=aHR0cHM6Ly93d3cuY29pbnNwb3QuY29tLmF1OjQ0Mw..&amp;hl=en&amp;v=Km9gKuG06He-isPsP6saG8cn&amp;size=normal&amp;cb=vemqe4isoadz" width="304" height="78" role="presentation" name="a-l2er8eri2azs" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox">
-</iframe>
-</div>
-{/* <textarea id="g-recaptcha-response" name="g-recaptcha-response" className="g-recaptcha-response">
-</textarea> */}
 
-</div>
+ <ReCAPTCHA
+            sitekey="6LeJjkYjAAAAACe4zyk_rrxY1-fVFmNslcZ-Elyj"
+            render="explicit"
+            onChange={(value) => formik.setFieldValue("recaptcha",value)}
+            ref={captchaRef}
+
+          />
+            {formik.touched.recaptcha && formik.errors.recaptcha ? (
+                          <p style={{color:"red"}} className="error m-0">
+                            {formik.errors.recaptcha}
+                          </p>
+                        ) : null}
 <button type="submit" className={`w-100 btn btn-lg btn-primary ${style.btncreateaccount}`}>Create Account</button>
 <div className={`text-center ${style.CreateAccount}`}>
 <small style={{color:"#75798A"}}>
@@ -102,9 +172,9 @@ By creating an account you are agreeing to CoinSpot's<br/>
 </div>
         </div>
      </div>
-     <Footer/>
-    </div>
+    
+    </>
   )
 }
 
-export default index
+export default Index

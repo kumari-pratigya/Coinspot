@@ -1,6 +1,11 @@
 .leftContent{
     padding:0px 20px;
 }
+.LeftContentDark{
+    color:white;
+    background-color:black;
+    padding:0px 20px;
+}
 .content{
     max-width: 410px;
     padding: 80px 0px;
@@ -12,19 +17,32 @@
     color: #17181C !important;
     font-size: 30px;
 }
+.sectionHeadingDark{
+    color: white;
+    margin-top: 30px;
+    font-family: "InterSmBd" !important;
+    font-size: 30px;
+}
 .subHeading{
     margin-bottom: 20px;
     color: #75798A;
    
 }
+.subHeadingDark{
+    margin-bottom: 20px;
+    color: white;
+}
 input::placeholder{
    color: #c1ccd4;
 }
-.formGroup{
+/* .formGroup{
     margin-bottom: 15px;
-}
+} */
 .inputGroup{
     position: relative;
+}
+.formControl{
+background-color: white !important;
 }
 .togglepassword{
 position: absolute;
@@ -50,6 +68,11 @@ color: #75798A;
     position: relative;
 }
 .rightContent{
+    background-color: #004FEE;
+    place-content: center;
+    flex-direction: column;
+}
+.rightContentDark{
     background-color: #004FEE;
     place-content: center;
     flex-direction: column;
@@ -177,7 +200,7 @@ height: 30px;
     }
  }
  @media (max-width: 991.98px) { 
-    .inputGroup{
+    /* .inputGroup{
         z-index: -1;
-    }
+    } */
 }
