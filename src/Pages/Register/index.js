@@ -112,6 +112,7 @@ const Index = () => {
             render="explicit"
             onChange={(value) => formik.setFieldValue("recaptcha",value)}
             ref={captchaRef}
+            theme={darkMode?"dark":"light"}
 
           />
             {formik.touched.recaptcha && formik.errors.recaptcha ? (
